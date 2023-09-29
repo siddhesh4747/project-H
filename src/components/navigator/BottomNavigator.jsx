@@ -8,6 +8,7 @@ import ApplyPage from '../../screens/ApplyPage';
 import Group from '../../screens/Group';
 import ProfilePage from '../../screens/profile/ProfilePage';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
+import ProfileNavigator from '../../screens/profile/ProfileNavigator';
 
 
 const Tab = createBottomTabNavigator();
@@ -32,7 +33,7 @@ export default function BottomNavigator() {
             backgroundColor: 'black',
             position:'relative',
             flex:1
-        }}  initialRouteName='ProfilePage'>
+        }}  initialRouteName='ProfileNavigator'>
             <Tab.Screen name="Project" component={Project} options={{
                 tabBarIcon: ({ color, size }) => (
                     <FontAwesomeIcon icon={faMagnifyingGlass} color={color} size={24} />
@@ -51,7 +52,7 @@ export default function BottomNavigator() {
                 ),
                 tabBarLabel: 'group',
             }}  />
-            <Tab.Screen name="ProfilePage" component={ProfilePage} options={{
+            <Tab.Screen name="ProfileNavigator" component={ProfileNavigator} options={{
                 tabBarIcon: ({ color, size }) => (
                     <FontAwesomeIcon icon={faUser} color={color} size={24} />
                 ),
