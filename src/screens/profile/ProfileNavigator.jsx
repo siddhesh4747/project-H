@@ -12,12 +12,14 @@ import OurPaperJournal from './OurPaperJournal';
 import Bookmarks from './Bookmarks';
 import Settings from './Settings';
 import Notification from './Notification';
+import FeedbackPage from './FeedbackPage';
+import AddNewProjectForPeople from './AddNewProjectForPeople';
 
 const Stack = createNativeStackNavigator();
 
 export default function ProfileNavigator() {
   return (
-    <Stack.Navigator initialRouteName='Notification'  screenOptions={{headerShown:false}}  >
+    <Stack.Navigator initialRouteName='AddNewProjectForPeople'  screenOptions={{headerShown:false}}  >
     <Stack.Screen name="Profile" component={ProfilePage} />
     <Stack.Screen name="ActiveProject" component={ActiveProject} />
     <Stack.Screen name="DoneProject" component={DoneProject} />
@@ -25,10 +27,12 @@ export default function ProfileNavigator() {
     <Stack.Screen name="AddNewProject" component={AddNewProject} />
     <Stack.Screen name="AddNewProject1" component={AddNewProject1} />
     <Stack.Screen name="ContactPeople" component={ContactPeople} />
+    <Stack.Screen name="AddNewProjectForPeople" component={AddNewProjectForPeople} />
     <Stack.Screen name="OurPaperJournal" component={OurPaperJournal} />
     <Stack.Screen name="Bookmarks" component={Bookmarks} />
     <Stack.Screen name="Settings" component={Settings} />
     <Stack.Screen name="Notification" component={Notification} />
+    <Stack.Screen name="FeedbackPage" component={FeedbackPage} />
    
   </Stack.Navigator>
   )

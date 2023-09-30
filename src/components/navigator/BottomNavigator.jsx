@@ -14,26 +14,29 @@ import ProfileNavigator from '../../screens/profile/ProfileNavigator';
 const Tab = createBottomTabNavigator();
 export default function BottomNavigator() {
     return (
-        <Tab.Navigator screenOptions={{
+        <Tab.Navigator 
+        screenOptions={{
             headerShown: false,
             tabBarActiveTintColor: '#2462DB',
             tabBarInactiveTintColor: 'rgba(255, 255, 255, 0.8)',
+            
             tabBarLabelStyle: {
                 fontWeight: '400',
                 fontSize: 10,
             },
             tabBarStyle: {
                 backgroundColor: 'black',
-                height: 51,
-                marginBottom:30,
-                position:'absolute',
-                borderColor:'black'
+                height: 61,
+                borderColor:'black',
+                paddingBottom:18
             },
-        }} sceneContainerStyle={{
+        }} 
+        sceneContainerStyle={{
             backgroundColor: 'black',
-            position:'relative',
             flex:1
-        }}  initialRouteName='ProfileNavigator'>
+        }}
+         
+        initialRouteName='ProfileNavigator'>
             <Tab.Screen name="Project" component={Project} options={{
                 tabBarIcon: ({ color, size }) => (
                     <FontAwesomeIcon icon={faMagnifyingGlass} color={color} size={24} />
