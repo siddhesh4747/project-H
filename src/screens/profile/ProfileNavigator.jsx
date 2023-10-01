@@ -14,12 +14,15 @@ import Settings from './Settings';
 import Notification from './Notification';
 import FeedbackPage from './FeedbackPage';
 import AddNewProjectForPeople from './AddNewProjectForPeople';
+import DeleteAccount from './DeleteAccount';
+import SignoutPage from './SignoutPage';
+import ViewOnWeb from './ViewOnWeb';
 
 const Stack = createNativeStackNavigator();
 
 export default function ProfileNavigator() {
   return (
-    <Stack.Navigator initialRouteName='AddNewProjectForPeople'  screenOptions={{headerShown:false}}  >
+    <Stack.Navigator initialRouteName='SignoutPage'  screenOptions={{headerShown:false}}  >
     <Stack.Screen name="Profile" component={ProfilePage} />
     <Stack.Screen name="ActiveProject" component={ActiveProject} />
     <Stack.Screen name="DoneProject" component={DoneProject} />
@@ -32,7 +35,10 @@ export default function ProfileNavigator() {
     <Stack.Screen name="Bookmarks" component={Bookmarks} />
     <Stack.Screen name="Settings" component={Settings} />
     <Stack.Screen name="Notification" component={Notification} />
+    <Stack.Screen name="SignoutPage" component={SignoutPage} />
     <Stack.Screen name="FeedbackPage" component={FeedbackPage} />
+    <Stack.Screen name="ViewOnWeb" component={ViewOnWeb} />
+    <Stack.Screen name="DeleteAccount" component={DeleteAccount} />
    
   </Stack.Navigator>
   )

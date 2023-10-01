@@ -3,12 +3,11 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faDoorOpen, faGroupArrowsRotate, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Project from '../../screens/Project';
-import ApplyPage from '../../screens/ApplyPage';
-import Group from '../../screens/Group';
-import ProfilePage from '../../screens/profile/ProfilePage';
+import Project from './Project';
+import Group from './Group';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import ProfileNavigator from '../../screens/profile/ProfileNavigator';
+import ProfileNavigator from './profile/ProfileNavigator';
+import ApplyNavigator from './apply/ApplyNavigator';
 
 
 const Tab = createBottomTabNavigator();
@@ -36,14 +35,14 @@ export default function BottomNavigator() {
             flex:1
         }}
          
-        initialRouteName='ProfileNavigator'>
+        initialRouteName='ApplyNavigator'>
             <Tab.Screen name="Project" component={Project} options={{
                 tabBarIcon: ({ color, size }) => (
                     <FontAwesomeIcon icon={faMagnifyingGlass} color={color} size={24} />
                 ),
                 tabBarLabel: 'project',
             }} />
-            <Tab.Screen name="ApplyPage" component={ApplyPage} options={{
+            <Tab.Screen name="ApplyNavigator" component={ApplyNavigator} options={{
                 tabBarIcon: ({ color, size }) => (
                     <FontAwesomeIcon icon={faDoorOpen} color={color} size={24} />
                 ),
