@@ -25,7 +25,7 @@ const [isLogin, setIsLogin] = useState(true)
 
   return (
     <NavigationContainer >
-      <Stack.Navigator screenOptions={{headerShown:false,statusBarHidden:true}}  initialRouteName={isLogin?'MyTabs':'Signin'}>
+      <Stack.Navigator screenOptions={{headerShown:false,statusBarHidden:true}}  initialRouteName={isLogin?'MyTabs':'Interest'}>
         <Stack.Screen name="MyTabs" component={BottomNavigator} options={{}}/>
         <Stack.Screen name="Interest" component={Interest} />
         <Stack.Screen name="Signup" component={Signup} />
