@@ -1,5 +1,6 @@
 import React from 'react'
 import  FontAwesomeIcon  from 'react-native-vector-icons/FontAwesome';
+import  FontAwesomeIcon5  from 'react-native-vector-icons/FontAwesome5';
 import  MaterialCommunityIcon  from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -33,7 +34,7 @@ export default function BottomNavigator() {
             flex:1
         }}
          
-        initialRouteName='GroupNavigator'>
+        initialRouteName='ProfileNavigator'>
             <Tab.Screen name="ProjectNavigator" component={ProjectNavigator} options={{
                 tabBarIcon: ({ color, size }) => (
                     <MaterialCommunityIcon name={'telescope'} color={color} size={24} />
@@ -44,7 +45,7 @@ export default function BottomNavigator() {
             }} />
             <Tab.Screen name="ApplyNavigator" component={ApplyNavigator} options={{
                 tabBarIcon: ({ color, size }) => (
-                    <FontAwesomeIcon name={'user-plus'} color={color} size={24} />
+                    <FontAwesomeIcon5 name={'user-tie'} color={color} size={24} />
 
                 ),
                 tabBarLabel: 'apply',

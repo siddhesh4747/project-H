@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 
 export default function ProjectNavigator() {
   return (
-    <Stack.Navigator initialRouteName='AdminInfo'  screenOptions={{headerShown:false}}  >
+    <Stack.Navigator initialRouteName='Projects'  screenOptions={{headerShown:false}}  >
     <Stack.Screen name="Projects" component={Projects} />
     <Stack.Screen name="Projects2" component={Projects2} />
     <Stack.Screen name="AdminInfo" component={AdminInfo} />

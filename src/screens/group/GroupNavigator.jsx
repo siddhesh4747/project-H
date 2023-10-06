@@ -10,8 +10,9 @@ import Issues from './Issues';
 import AddIssues from './AddIssues';
 import Comments from './Comments';
 import Chat from './Chat';
-import Messages from './messages';
+
 import Members from './Members';
+import Messages from './Messages';
 
 
 const Stack = createNativeStackNavigator();

@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 
 export default function ApplyNavigator() {
   return (
-    <Stack.Navigator initialRouteName='FilterPage'  screenOptions={{headerShown:false}}  >
+    <Stack.Navigator initialRouteName='ApplyPage2'  screenOptions={{headerShown:false}}  >
     <Stack.Screen name="FilterPage" component={FilterPage} />
     <Stack.Screen name="Apply" component={ApplyPage} />
     <Stack.Screen name="ApplyPage2" component={ApplyPage2} />

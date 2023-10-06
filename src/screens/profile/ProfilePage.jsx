@@ -12,7 +12,7 @@ export default function ProfilePage({navigation}) {
   const { width } = useWindowDimensions()
 
   return (
-    <View className='px-[12px] py-[30px]' style={{ width: width }}>
+    <View className='px-[12px] py-[30px] bg-screen flex-1' style={{ width: width }}>
       <StatusBar hidden />
       <Text className='text-white font-[700] text-[32px]'>Profile</Text>
 
@@ -48,9 +48,9 @@ export default function ProfilePage({navigation}) {
         </View>
 
         <View className='mt-[15px] '>
-          <ButtonIcon text={'Upload resume'} icon={faPaperclip} handler={()=>navigation.navigate('UploadResume')}/>
-          <ButtonIcon text={'add new project'} icon={faPlusSquare} handler={()=>navigation.navigate('AddNewProject')}/>
-          <ButtonIcon text={'Contact people for project'} icon={faPersonMilitaryToPerson} handler={()=>navigation.navigate('ContactPeople')}/>
+          <ButtonIcon text={'Upload resume'} IconProvider={FeatherIcon} icon={'paperclip'} handler={()=>navigation.navigate('UploadResume')}/>
+          <ButtonIcon text={'add new project'} IconProvider={FeatherIcon} icon={'plus-square'} handler={()=>navigation.navigate('AddNewProject')}/>
+          <ButtonIcon text={'Contact people for project'} IconProvider={FontAwesomeI} icon={'user-friends'} handler={()=>navigation.navigate('ContactPeople')}/>
         </View>
         <View>
 

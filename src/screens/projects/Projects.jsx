@@ -24,7 +24,7 @@ export default function Projects({ navigation }) {
                         className=' placeholder:text-[16px] placeholder:font-epilogue400 '
                     />
                 </View>
-                <FatherIcon name={'filter'} size={24} color='rgba(255, 255, 255, 0.7)' />
+                {/* <FatherIcon name={'filter'} size={24} color='rgba(255, 255, 255, 0.7)' /> */}
 
             </View>
 
