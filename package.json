@@ -19,6 +19,7 @@
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
     "@reduxjs/toolkit": "^1.9.6",
+    "axios": "^1.5.1",
     "formik": "^2.4.5",
     "native": "^0.3.3",
     "nativewind": "^2.0.11",

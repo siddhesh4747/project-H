@@ -19,11 +19,11 @@ const Tab = createBottomTabNavigator();
 
 function App() {
 
-const [isLogin, setIsLogin] = useState(true)
+const [isLogin, setIsLogin] = useState(false)
 
   return (
     <NavigationContainer >
-      <Stack.Navigator screenOptions={{headerShown:false,statusBarHidden:true}}  initialRouteName={isLogin?'MyTabs':'Interest'}>
+      <Stack.Navigator screenOptions={{headerShown:false,statusBarHidden:true}}  initialRouteName={isLogin?'MyTabs':'Signup'}>
         <Stack.Screen name="MyTabs" component={BottomNavigator} options={{}}/>
         <Stack.Screen name="Interest" component={Interest} />
         <Stack.Screen name="Signup" component={Signup} />
