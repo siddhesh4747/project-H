@@ -11,7 +11,7 @@ import GroupNavigator from './group/GroupNavigator';
 
 
 const Tab = createBottomTabNavigator();
-export default function BottomNavigator() {
+export default function BottomNavigator({navigation}) {
     return (
         <Tab.Navigator 
         screenOptions={{

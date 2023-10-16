@@ -31,11 +31,10 @@ export default function Signup({ navigation }) {
       console.log(res.data)
       if(res.data.status){
         ToastAndroid.show('user registered',ToastAndroid.TOP)
-        navigation.navigate('Signin')
+        navigation.navigate('Interest')
       }
-
     })
-      .catch(err => {
+    .catch(err => {
         console.log(err)
         console.log(err.message)
       })
@@ -112,7 +111,7 @@ export default function Signup({ navigation }) {
               <TouchableOpacity className=' bg-button  rounded-lg p-2' onPress={handleSubmit}>
                 <Text className=' text-[#2462DB] text-4xl font-epilogue600 mx-auto'>Sign up</Text>
               </TouchableOpacity>
-              <TouchableOpacity className='mt-2'>
+              <TouchableOpacity className='mt-2' onPress={()=>navigation.navigate('Signin')}>
                 <Text className=' font-epilogue400 text-white/80 text-lg text-center '>Already have an account </Text>
               </TouchableOpacity>
 

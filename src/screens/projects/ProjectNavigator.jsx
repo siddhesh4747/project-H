@@ -12,7 +12,7 @@ import Comments from './Comments';
 
 const Stack = createNativeStackNavigator();
 
-export default function ProjectNavigator() {
+export default function ProjectNavigator({navigation}) {
   return (
     <Stack.Navigator initialRouteName='Projects'  screenOptions={{headerShown:false}}  >
     <Stack.Screen name="Projects" component={Projects} />
