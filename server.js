@@ -23,11 +23,11 @@ import ActiveRoute from "./routes/activeProjectRoute.js";
 import ContactRoute from "./routes/contactProjectRoute.js";
 import ResumeRoute from "./routes/resumeUploadRoute.js";
 import PaperRoute from "./routes/papersUploadRoute.js";
-app.use("/profile", ProjectRoute);
-app.use("/profile", ActiveRoute);
-app.use("/profile", ContactRoute);
-app.use("/profile", ResumeRoute);
-app.use("/profile", PaperRoute);
+app.use("/profile/project", ProjectRoute);
+app.use("/profile/active", ActiveRoute);
+app.use("/profile/contact", ContactRoute);
+app.use("/profile/resume", ResumeRoute);
+app.use("/profile/paper", PaperRoute);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server Running on port ${process.env.PORT}`);

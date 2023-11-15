@@ -20,18 +20,18 @@ const cpUploads = upload.fields([
 ]);
 
 // Create a new Contact pepole(cp) project
-router.post("/cp/create", authenticateJWT, cpUploads, createController);
+router.post("/create", authenticateJWT, cpUploads, createController);
 
 // Get all projects for the user
-router.get("/cp/projects/:projectId", authenticateJWT, getSingleProject);
+router.get("/projects/:projectId", authenticateJWT, getSingleProject);
 
 //Get a photos for the user
-router.get("/cp/photos/:projectId", authenticateJWT, getPhotosData);
+router.get("/photos/:projectId", authenticateJWT, getPhotosData);
 
 // Add a route for downloading PDF by project ID
-router.get("/cp/download-pdf/:projectId", authenticateJWT, downloadPDF);
+router.get("/download-pdf/:projectId", authenticateJWT, downloadPDF);
 
 // Delete a specific project
-router.delete("/cp/delete/:projectId", authenticateJWT, deleteProject);
+router.delete("/delete/:projectId", authenticateJWT, deleteProject);
 
 export default router;

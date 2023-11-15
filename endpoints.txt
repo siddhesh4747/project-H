@@ -1,0 +1,114 @@
+** EndPoints for Add Done Project ** 
+
+Create a new project:
+Method: POST
+Path: /profile/project/add
+Middleware: authenticateJWT (Authentication middleware), cpUploads (File upload middleware)
+Handler Function: createProject
+Description: Create a new project under the user's profile. The route is protected by authentication, and it allows the uploading of files (cpUploads) as part of the project creation.
+
+*/---------------------------------------------------------/*
+
+Get all projects for the user:
+
+Method: GET
+Path: /profile/project/allProjects
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: getProjects
+Description: Retrieve all projects associated with the user's profile. Requires authentication.
+
+*/---------------------------------------------------------/*
+
+Get photos for the user:
+
+Method: GET
+Path: /profile/project/photos/:projectId
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: getPhotos
+Description: Retrieve photos associated with a specific project identified by projectId. Requires authentication.
+
+*/---------------------------------------------------------/*
+
+Download PDF by project ID:
+
+Method: GET
+Path: /profile/project/download-pdf/:projectId
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: downloadPDF
+Description: Download a PDF associated with a specific project identified by projectId. Requires authentication.
+
+*/---------------------------------------------------------/*
+
+Update a specific project:
+
+Method: PATCH
+Path: /profile/project/update/:projectId
+Middleware: authenticateJWT (Authentication middleware), cpUploads (File upload middleware)
+Handler Function: updateProject
+Description: Update details of a specific project identified by projectId. Requires authentication and allows file uploads (cpUploads).
+
+*/---------------------------------------------------------/*
+
+Delete a specific project:
+
+Method: DELETE
+Path: /profile/project/delete/:projectId
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: deleteProject
+Description: Delete a specific project identified by projectId. Requires authentication
+
+/***********************************************************/
+
+
+** EndPoints for Contact People for Project ** 
+
+Create a new Contact Project:
+
+Method: POST
+Path: /profile/contact/create
+Middleware: authenticateJWT (Authentication middleware), cpUploads (File upload middleware)
+Handler Function: createController
+Description: Create a new Contact People (CP) project. The route is protected by authentication (authenticateJWT) and allows the uploading of files (cpUploads) as part of the project creation.
+
+*/---------------------------------------------------------/*
+
+Get all projects for the user:
+
+Method: GET
+Path: /profile/contact/projects/:projectId
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: getSingleProject
+Description: Retrieve details of a specific Contact People project identified by projectId. Requires authentication.
+
+*/---------------------------------------------------------/*
+
+Get photos for the user:
+
+Method: GET
+Path: /profile/contact/photos/:projectId
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: getPhotosData
+Description: Retrieve photos associated with a specific Contact People project identified by projectId. Requires authentication.
+
+*/---------------------------------------------------------/*
+
+Download PDF by project ID:
+
+Method: GET
+Path: /profile/contact/download-pdf/:projectId
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: downloadPDF
+Description: Download a PDF associated with a specific Contact People project identified by projectId. Requires authentication.
+
+*/---------------------------------------------------------/*
+
+Delete a specific project:
+
+Method: DELETE
+Path: /profile/contact/delete/:projectId
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: deleteProject
+Description: Delete a specific Contact People project identified by projectId. Requires authentication.
+
+/**********************************************************/
+

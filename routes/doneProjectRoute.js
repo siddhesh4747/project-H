@@ -25,23 +25,18 @@ const cpUploads = upload.fields([
 router.post("/add", authenticateJWT, cpUploads, createProject);
 
 // Get all projects for the user
-router.get("/projects/allProjects", authenticateJWT, getProjects);
+router.get("/allProjects", authenticateJWT, getProjects);
 
 //Get a photos for the user
-router.get("/projects/photos/:projectId", authenticateJWT, getPhotos);
+router.get("/photos/:projectId", authenticateJWT, getPhotos);
 
 // Add a route for downloading PDF by project ID
-router.get("/projects/download-pdf/:projectId", authenticateJWT, downloadPDF);
+router.get("/download-pdf/:projectId", authenticateJWT, downloadPDF);
 
 // Update a specific project
-router.patch(
-  "/projects/update/:projectId",
-  authenticateJWT,
-  cpUploads,
-  updateProject
-);
+router.patch("/update/:projectId", authenticateJWT, cpUploads, updateProject);
 
 // Delete a specific project
-router.delete("/projects/delete/:projectId", authenticateJWT, deleteProject);
+router.delete("/delete/:projectId", authenticateJWT, deleteProject);
 
 export default router;
