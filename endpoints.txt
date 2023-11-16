@@ -112,3 +112,97 @@ Description: Delete a specific Contact People project identified by projectId. R
 
 /**********************************************************/
 
+** Endpoints for Active Project **
+
+Create a new Active Project:
+
+Method: POST
+Path: /profile/active/add
+Middleware: authenticateJWT (Authentication middleware), upload (File upload middleware)
+Handler Function: activeProject
+Description: Create a new active project. The route is protected by authentication (authenticateJWT) and allows the uploading of files (upload) as part of the project creation.
+
+*/---------------------------------------------------------/*
+
+Get Active Projects for the User:
+
+Method: GET
+Path: /profile/active/getDetails
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: getActiveProjects
+Description: Retrieve details of active projects associated with the user. Requires authentication.
+
+*/---------------------------------------------------------/*
+
+Delete a specific Active Project:
+
+Method: DELETE
+Path: /profile/active/:projectId
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: deleteActiveProject
+Description: Delete a specific active project identified by projectId. Requires authentication.
+
+/**********************************************************/
+
+** Endpoints for Resume **
+
+Upload Resume:
+
+Method: POST
+Path: /profile/resume/upload-resume
+Middleware: upload.single("resume") (File upload middleware for a single file named "resume"), authenticateJWT (Authentication middleware)
+Handler Function: uploadResume
+Description: Upload a resume. The route is protected by authentication (authenticateJWT), and it allows the user to upload a resume file using the resume field.
+
+*/---------------------------------------------------------/*
+
+Fetch Resume:
+
+Method: GET
+Path: /profile/resume/fetch-resume
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: fetchResume
+Description: Fetch the user's resume. Requires authentication.
+
+*/---------------------------------------------------------/*
+
+Delete Resume:
+
+Method: DELETE
+Path: /profile/resume/delete-resume
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: deleteResume
+Description: Delete the user's uploaded resume. Requires authentication.
+
+/**********************************************************/
+** Endpoints for paper & Journal **
+
+Upload Papers:
+
+Method: POST
+Path: /profile/paper/upload-papers
+Middleware: upload.single("pdf") (File upload middleware for a single file named "pdf"), authenticateJWT (Authentication middleware)
+Handler Function: uploadPapers
+Description: Upload papers. The route is protected by authentication (authenticateJWT), and it allows the user to upload a PDF file using the pdf field.
+
+*/---------------------------------------------------------/*
+
+Get Papers Details for the User:
+
+Method: GET
+Path: /profile/paper/getpapers
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: getPapers
+Description: Retrieve details of papers associated with the user. Requires authentication.
+
+*/---------------------------------------------------------/*
+
+Delete Papers for the User:
+
+Method: DELETE
+Path: /profile/paper/:paperId
+Middleware: authenticateJWT (Authentication middleware)
+Handler Function: deletepapers
+Description: Delete a specific paper identified by paperId. Requires authentication.
+
+/**********************************************************/

@@ -24,6 +24,6 @@ router.post(
 router.get("/getpapers", authenticateJWT, getPapers);
 
 //  Delete Papers for the user
-router.delete("/papers/:paperId", authenticateJWT, deletepapers);
+router.delete("/:paperId", authenticateJWT, deletepapers);
 
 export default router;

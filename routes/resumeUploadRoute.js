@@ -24,6 +24,6 @@ router.post(
 router.get("/fetch-resume", authenticateJWT, fetchResume);
 
 // Route for Deleting the resume
-router.delete("/resume", authenticateJWT, deleteResume);
+router.delete("/delete-resume", authenticateJWT, deleteResume);
 
 export default router;
