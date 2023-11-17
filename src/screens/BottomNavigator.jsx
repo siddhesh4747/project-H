@@ -1,24 +1,23 @@
-import { View, Text } from 'react-native'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faDoorOpen, faGroupArrowsRotate, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import  FontAwesomeIcon  from 'react-native-vector-icons/FontAwesome';
+import  FontAwesomeIcon5  from 'react-native-vector-icons/FontAwesome5';
+import  MaterialCommunityIcon  from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Project from './Project';
-import Group from './Group';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
+
 import ProfileNavigator from './profile/ProfileNavigator';
 import ApplyNavigator from './apply/ApplyNavigator';
+import ProjectNavigator from './projects/ProjectNavigator';
+import GroupNavigator from './group/GroupNavigator';
 
 
 const Tab = createBottomTabNavigator();
-export default function BottomNavigator() {
+export default function BottomNavigator({navigation}) {
     return (
         <Tab.Navigator 
         screenOptions={{
             headerShown: false,
             tabBarActiveTintColor: '#2462DB',
             tabBarInactiveTintColor: 'rgba(255, 255, 255, 0.8)',
-            
             tabBarLabelStyle: {
                 fontWeight: '400',
                 fontSize: 10,
@@ -35,28 +34,31 @@ export default function BottomNavigator() {
             flex:1
         }}
          
-        initialRouteName='ApplyNavigator'>
-            <Tab.Screen name="Project" component={Project} options={{
+        initialRouteName='ProfileNavigator'>
+            <Tab.Screen name="ProjectNavigator" component={ProjectNavigator} options={{
                 tabBarIcon: ({ color, size }) => (
-                    <FontAwesomeIcon icon={faMagnifyingGlass} color={color} size={24} />
+                    <MaterialCommunityIcon name={'telescope'} color={color} size={24} />
+
                 ),
                 tabBarLabel: 'project',
+                
             }} />
             <Tab.Screen name="ApplyNavigator" component={ApplyNavigator} options={{
                 tabBarIcon: ({ color, size }) => (
-                    <FontAwesomeIcon icon={faDoorOpen} color={color} size={24} />
+                    <FontAwesomeIcon5 name={'user-tie'} color={color} size={24} />
+
                 ),
                 tabBarLabel: 'apply',
             }}  />
-            <Tab.Screen name="Group" component={Group} options={{
+            <Tab.Screen name="GroupNavigator" component={GroupNavigator} options={{
                 tabBarIcon: ({ color, size }) => (
-                    <FontAwesomeIcon icon={faGroupArrowsRotate} color={color} size={24} />
+                    <MaterialCommunityIcon name={'vector-union'} color={color} size={24} />
                 ),
                 tabBarLabel: 'group',
             }}  />
             <Tab.Screen name="ProfileNavigator" component={ProfileNavigator} options={{
                 tabBarIcon: ({ color, size }) => (
-                    <FontAwesomeIcon icon={faUser} color={color} size={24} />
+                    <FontAwesomeIcon name={'user-o'} color={color} size={24} />
                 ),
                 tabBarLabel: 'profile',
             }}   />

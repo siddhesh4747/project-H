@@ -1,95 +1,99 @@
-import { View, Text, TouchableOpacity, TextInput, Button } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, Button, ToastAndroid } from 'react-native'
 import React from 'react'
 import { Formik, useFormikContext } from 'formik'
 import * as Yup from 'yup';
+import { loginUser, registerUser } from '../../services/authServices';
+import ButtonCustom2 from '../../components/ButtonCustom2';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'
 
-export default function Signin() {
-
-
-
-  const SignupSchema = Yup.object().shape({
-    firstName: Yup.string()
-      .min(2, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Required'),
-    lastName: Yup.string()
-      .min(2, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Required'),
+export default function Signin({ navigation }) {
+  const SigninSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
+    password: Yup.string()
+      .min(8, 'Password must be at least 8 characters')
+      .max(50, 'Too Long!')
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,}$/,
+        'Password must contain at least 1 lowercase letter, 1 uppercase letter, and 1 special character')
+      .required('Password is required'),
   });
 
   const handleSubmit = (values) => {
-    // Handle form submission here
-    console.log('running')
-    console.log(values.email);
+    console.log('working-',values)
+    loginUser(values).then(res => {
+      console.log(res.data)
+      if(res.data.status){
+        ToastAndroid.show('login success',ToastAndroid.TOP)
+        navigation.navigate('Projects')
+      }else{
+        ToastAndroid.show(res.data.msg,ToastAndroid.BOTTOM)
+
+      }
+    })
+    .catch(err => {
+        console.log(err)
+        console.log(err.message)
+      })
   };
 
   return (
-    <View className=' bg-black flex-1 px-[12px] justify-between'>
-      <View>
-        <Text className=' text-white text-[32px] mt-[40px] font-[700]'>Sign in</Text>
-        <TouchableOpacity className=' bg-[#222] my-[24px] rounded-md p-[8px] '>
-          <Text className=' text-white/80 text-[16px] font-[600]'>google button</Text>
-        </TouchableOpacity>
-        <Text className='font-[400] text-white/80'>Or With</Text>
+    <View className=' bg-screen flex-1 px-3 '>
 
-        <Formik
-          initialValues={{ email: '',name:'',password:'' }}
-          onSubmit={handleSubmit}
-          validationSchema={SignupSchema}
-        
-        >
-          {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
-            <View>
-              <TextInput
-                onChangeText={handleChange('name')}
-                onBlur={handleBlur('name')}
-                value={values.name}
-                placeholder='Enter your user name'
-                placeholderTextColor={'rgba(255, 255, 255, 0.8)'}
-                className=' bg-[#222] mt-[24px] rounded-md p-[8px] text-[16px] px-[18px] py-[12px] font-[600] text-white'
-              />
-              {errors.name && touched.name ? <Text className='text-red-400'>{errors.name}</Text> : null}
+      <Text className=' text-white text-4xl mt-10 font-epilogue700'>Sign in</Text>
 
-              <Text className=' text-white/80 text-[16px] mx-auto font-[400] my-[7px]'>Or</Text>
+      <Formik
+        initialValues={{  email: '', password: '',  }}
+        onSubmit={handleSubmit}
+        validationSchema={SigninSchema}
+      >
+        {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
+          <View className=' flex-col justify-between  flex-1'>
+            <View className=' mt-6'>
 
+            <ButtonCustom2 IconProvider={FontAwesomeIcon} icon={'google'} text={'Google'} width={'full'}/>
+          
+          <Text className='text-white/80 font-epilogue400 text-lg mt-5'>Or With</Text>
               <TextInput
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
                 value={values.email}
                 placeholder='Enter your gmail'
                 placeholderTextColor={'rgba(255, 255, 255, 0.8)'}
-                className=' bg-[#222]  rounded-md p-[8px] text-[16px] px-[18px] py-[12px] font-[600] text-white'
+                className=' bg-button mt-4 rounded-lg  text-lg px-4 py-2 font-[600] text-white/80'
+
               />
               {errors.email && touched.email ? <Text className='text-red-400'>{errors.email}</Text> : null}
 
+          
               <TextInput
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values.password}
                 placeholder='Enter Password'
                 placeholderTextColor={'rgba(255, 255, 255, 0.8)'}
-                className=' bg-[#222] mt-[13px] rounded-md p-[8px] text-[16px] px-[18px] py-[12px] font-[600] text-white'
+                className=' bg-button mt-4 rounded-lg  text-lg px-4 py-2 font-[600] text-white/80'
+
               />
-              {errors.password && touched.password ? <Text className='text-red-400'>{errors.password}</Text> : null}
+        
             </View>
-          )}
-        </Formik>
-      </View>
+            <View className=' mb-5'>
 
-      <View className=' my-[31px]'>
-
-        <TouchableOpacity className=' bg-[#222]  rounded-md p-[8px]' onPress={handleSubmit}>
-          <Text className=' text-[#2462DB] text-[32px] font-[600] mx-auto'>Sign in</Text>
-        </TouchableOpacity>
-        <TouchableOpacity className='mt-[9px]'>
-          <Text className='font-[400] text-white/80 text-[16px] text-center '>Create an account </Text>
-        </TouchableOpacity>
+              <TouchableOpacity className=' bg-button  rounded-lg p-2' onPress={handleSubmit}>
+                <Text className=' text-[#2462DB] text-4xl font-epilogue600 mx-auto'>Sign in</Text>
+              </TouchableOpacity>
+              <TouchableOpacity className='mt-2' onPress={()=>navigation.navigate('Signup')}>
+                <Text className=' font-epilogue400 text-white/80 text-lg text-center '>Create an acccount</Text>
+              </TouchableOpacity>
 
 
 
-      </View>
+            </View>
+          </View>
+        )}
+      </Formik>
+
+
+
 
     </View>
   )

@@ -8,9 +8,7 @@ import Interest from './screens/auth/Interest';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import ApplyPage from './screens/apply/FilterPage';
-import Group from './screens/Group';
 import ProfilePage from './screens/profile/ProfilePage';
-import Project from './screens/Project';
 import BottomNavigator from './screens/BottomNavigator';
 import { useState } from 'react';
 
@@ -21,7 +19,7 @@ const Tab = createBottomTabNavigator();
 
 function App() {
 
-const [isLogin, setIsLogin] = useState(true)
+const [isLogin, setIsLogin] = useState(false)
 
   return (
     <NavigationContainer >

@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator();
 
 export default function ProfileNavigator() {
   return (
-    <Stack.Navigator initialRouteName='SignoutPage'  screenOptions={{headerShown:false}}  >
+    <Stack.Navigator initialRouteName='Profile'  screenOptions={{headerShown:false}}  >
     <Stack.Screen name="Profile" component={ProfilePage} />
     <Stack.Screen name="ActiveProject" component={ActiveProject} />
     <Stack.Screen name="DoneProject" component={DoneProject} />

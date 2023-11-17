@@ -1,8 +1,9 @@
 import { View, Text, TouchableOpacity, StatusBar, useWindowDimensions,TextInput } from 'react-native'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faBell, faCalendar, faThumbsUp, faUser } from '@fortawesome/free-regular-svg-icons'
-import { faFilter, faFilterCircleDollar, faMagnifyingGlass, faSchool } from '@fortawesome/free-solid-svg-icons'
+
+import  FontAwesomeIcon  from 'react-native-vector-icons/FontAwesome'
+import FatherIcon from 'react-native-vector-icons/Feather'
+import EntypoIcon from 'react-native-vector-icons/Entypo'
 
 export default function ApplyPage({ navigation }) {
 
@@ -15,19 +16,20 @@ export default function ApplyPage({ navigation }) {
         <View className='flex-row justify-between items-center'>
 
         <Text className='text-white font-[700] text-[32px]'>Apply</Text>
-        <FontAwesomeIcon icon={faBell} size={24} color='rgba(255, 255, 255, 0.7)' />
+        <FatherIcon name={'bell'} size={24} color='rgba(255, 255, 255, 0.7)' />
 
         </View>
         <View className='flex-row items-center justify-between w-full mt-[10px]'>
         <View className='flex-row items-center rounded-[8px]  px-[10px] gap-1 justify-between bg-[#222]'>
 
-        <FontAwesomeIcon icon={faMagnifyingGlass} size={24} color='rgba(255, 255, 255, 0.7)' />
+        <EntypoIcon name={'magnifying-glass'} size={24} color='rgba(255, 255, 255, 0.7)' />
+
         <TextInput placeholder='search project, topic, id'
             placeholderTextColor={'rgba(255, 255, 255, 0.8)'}
             className=' placeholder:text-[16px] placeholder:font-[400] '
         />
         </View>
-        <FontAwesomeIcon icon={faFilter} size={24} color='rgba(255, 255, 255, 0.7)' />
+        <FatherIcon name={'filter'} size={24} color='rgba(255, 255, 255, 0.7)' />
 
         </View>
 
@@ -37,30 +39,26 @@ export default function ApplyPage({ navigation }) {
                 </Text>
                 <View className='flex-row gap-x-[30px] mt-[12px]'>
 
-                    <View className='flex-row items-center gap-1'>
-                        <FontAwesomeIcon icon={faUser} size={15} color='rgba(255, 255, 255, 0.7)' />
-                        <Text className='text-[10px] font-[400] text-white/70'>name</Text>
-                    </View>
-                    <View className='flex-row items-center gap-1'>
-                        <FontAwesomeIcon icon={faCalendar} size={15} color='rgba(255, 255, 255, 0.7)' />
-                        <Text className='text-[10px] font-[400] text-white/70'>25-04-2023</Text>
-                    </View>
-                    <View className='flex-row items-center gap-1'>
-                        <FontAwesomeIcon icon={faCalendar} size={15} color='rgba(255, 255, 255, 0.7)' />
-                        <Text className='text-[10px] font-[400] text-white/70'>25-04-2023</Text>
-                    </View>
-                </View>
-                <View className='flex-row gap-x-[30px] mt-[12px]'>
+<View className='flex-row items-center gap-1'>
+    <FontAwesomeIcon name={'user-o'} size={15} color='rgba(255, 255, 255, 0.7)' />
+    <Text className='text-[10px] font-[400] text-white/70'>name</Text>
+</View>
+<View className='flex-row items-center gap-1'>
+    <FontAwesomeIcon name={'calendar-o'} size={15} color='rgba(255, 255, 255, 0.7)' />
+    <Text className='text-[10px] font-[400] text-white/70'>25-04-2023</Text>
+</View>
+</View>
+<View className='flex-row gap-x-[30px] mt-[12px]'>
 
-                    <View className='flex-row items-center gap-1'>
-                        <FontAwesomeIcon icon={faSchool} size={15} color='rgba(255, 255, 255, 0.7)' />
-                        <Text className='text-[10px] font-[400] text-white/70'>AISSMS IOIT</Text>
-                    </View>
-                    <View className='flex-row items-center gap-1'>
-                        <FontAwesomeIcon icon={faThumbsUp} size={15} color='rgba(255, 255, 255, 0.7)' />
-                        <Text className='text-[10px] font-[400] text-white/70'>345</Text>
-                    </View>
-                </View>
+<View className='flex-row items-center gap-1'>
+    <FontAwesomeIcon name={'building-o'} size={15} color='rgba(255, 255, 255, 0.7)' />
+    <Text className='text-[10px] font-[400] text-white/70'>AISSMS IOIT</Text>
+</View>
+<View className='flex-row items-center gap-1'>
+    <FatherIcon name={'thumbs-up'} size={15} color='rgba(255, 255, 255, 0.7)' />
+    <Text className='text-[10px] font-[400] text-white/70'>345</Text>
+</View>
+</View>
 
                 <View className='flex-row  gap-[10px] mt-[13px]'>
                    

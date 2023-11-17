@@ -15,7 +15,7 @@ export default function ApplyPage2({ navigation }) {
   return (
     <View className='px-[12px] py-[30px] bg-black flex-1' style={{ width: width }}>
       <StatusBar hidden />
-      <View className='flex-row justify-between items-center'>
+      <View className='flex-row  items-center'>
 
         <HeaderBack text={'Gesture Control Bluetooth Speaker Arduino'} />
         <FontAwesomeIcon icon={faBookmark} color='rgba(255, 255, 255, 0.8)' size={24} />
